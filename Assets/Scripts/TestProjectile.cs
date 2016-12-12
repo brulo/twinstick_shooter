@@ -11,6 +11,7 @@ public class TestProjectile : MonoBehaviour
 	private Rigidbody2D rigidBody;
 	private PooledGameObject pooledGameObject;
 	private float endLifeTimeStamp;
+	bool hasBeenHit = false;
 	
 	public void Fire( Vector2 direction )
 	{
@@ -25,6 +26,11 @@ public class TestProjectile : MonoBehaviour
 		pooledGameObject = GetComponent< PooledGameObject >();
 	}
 
+	void OnEnable()
+	{
+		hasBeenHit = false;
+	}
+
 	void Update()
 	{
 		if( Time.time > endLifeTimeStamp )
@@ -33,9 +39,15 @@ public class TestProjectile : MonoBehaviour
 		}
 	}
 
-	void OnCollisionEnter2D( Collision2D collision )
+	void OnTriggerEnter2D( Collider2D collider )
 	{
-		IDamageable damageable = collision as IDamageable;
+		if( !hasBeenHit )
+		{
+			hasBeenHit = true;
+			return;
+		}
+
+		IDamageable damageable = collider.gameObject.GetComponent< IDamageable >();
 		if( damageable != null )
 		{
 			damageable.Damage( damage );
