@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 using UnityEngine.InputNew;
 
 [RequireComponent( typeof( PlayerInput ) )]

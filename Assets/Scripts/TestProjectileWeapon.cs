@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Assertions;
+﻿using UnityEngine;
 
 // TODO: change to specific weapon
 [RequireComponent( typeof( GameObjectPool ) )]

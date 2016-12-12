@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 // this is a simple first test for StateMachine. 
 // 3 states are used to repeatively print numbers counting from one to three.

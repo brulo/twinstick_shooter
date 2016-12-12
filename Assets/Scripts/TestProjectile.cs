@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent( typeof( Rigidbody2D ) )]
 [RequireComponent( typeof( PooledGameObject ) )]
