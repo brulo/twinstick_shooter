@@ -52,10 +52,7 @@ public class StateMachine<StateType> where StateType : IComparable
     // immplementorIsUpdating to true. 
     public void Update( float deltaTime )
     {
-        // Update is called automatically if implementor is not updating 
-        Assert.IsTrue( !implementorIsUpdating && deltaTime > 0f );
-        
-        if( implementor != null )
+        if( implementor == null )
             return;
 
         if( goToNextState )
